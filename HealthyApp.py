@@ -4,7 +4,7 @@ from flask import request,url_for,make_response,jsonify,Flask
 
 app = Flask(__name__)
 
-# github_token = os.environ['git-token']
+github_token = os.environ['token']
 t1 = time.perf_counter()
 npmjs_url= 'https://registry.npmjs.org'
 
@@ -15,7 +15,8 @@ def time_difference(time):
     return date.days
 
 def last_commit(url):
-    response = requests.get(url=url)
+    headers = {"Authorization": f"Bearer {github_token}"}
+    response = requests.get(url=url,headers=headers)
     data = response.json()
     date = data[0].get('commit',{})['author']['date']
     return date
