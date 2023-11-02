@@ -6,10 +6,14 @@ if the NPM package is healthy or not. It does so by checking if a last commit wa
 
 
 usage:
+
 1)
+
 start by exporting a github token:
 export token="XXXXXXXXXXXXXX"
+
 2)
+
 using Curl or Postman make a POST request to "http://localhost:5000/resty". insert a plain/text package name or a comma seperated npm package list
 example:
 package1,package2,package3
