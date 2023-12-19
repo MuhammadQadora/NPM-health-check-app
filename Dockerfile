@@ -1,8 +1,7 @@
 FROM python:3.10.8
 WORKDIR /app
-COPY ./HealthyApp.py /app/
+COPY ./RestyApp.py /app/
 COPY req.txt /app/
-EXPOSE 4000
-ENV token=''
+EXPOSE 5000
 RUN pip3 install -r req.txt
-ENTRYPOINT ["python3","HealthyApp.py"]
+ENTRYPOINT ["python3","RestyApp.py"]
